@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03-09-2017, 18:11:54
+    Author     : millemichellemdal
+*/
+*{
+    margin: 0;
+    padding: 0;
+	font-family: Arial, Helvetica, sans-serif; 
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:  0.8em;
+    margin: 10px 2% 47px 2%;
+	background-color: #f2f2f2;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+h1{
+	text-align: center;
+	
+}
+
+h2{
+	width: 50%;
+}
+
+h3{
+	text-align: center;
+}
+
+h4{
+}
+
+a{
+	text-decoration: none;
+	color: black;
+	font-size: 15px;
+	text-align: center;
+	float: center;
+	font-weight: bold;
+	border: 1px black solid;
+}
+
+ ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+image{
+	float: left;
+	width: 49%;
+	height: 50%;
+	margin-right: 5px;
+}
+
+p{
+	float: right;
+	width: 49%;
+	height: 50%;
+}
+.box{
+	background-color: #FF00BB;
+	text-align: center;
+	height: 500px;
+}
+fieldset{
+	width: 500px;
+	height: 150px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	margin-left: 200px;
+	margin-right: 200px;
+	text-align: center;
+	background-color: #FF00BB;
+}
+
+legend{
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+input[name=un], [name=pw], [name=submit]{
+	margin-bottom: 4px;
+	margin-top: 4px;
+}

@@ -1,8 +1,14 @@
-<?php session_start(); ?><!doctype html>
+<?php session_start();
+if(isset($_SESSION['usr_id'])!=""){
+	header("Location: contentpage.php");
+}
+?>
+<!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<link rel="stylesheet" href="style.css">
+<title>Log IN</title>
 </head>
 
 <body>
@@ -17,7 +23,7 @@ if(filter_input(INPUT_POST, 'submit')){
 		or die('Missing/illegal pw parameter');
 
 	require_once('dbcon.php');
-	$sql = 'SELECT id, pwhash FROM users WHERE username=?';
+	$sql = 'SELECT user_id, password FROM users WHERE username=?';
 	$stmt = $link->prepare($sql);
 	$stmt->bind_param('s', $un);
 	$stmt->execute();
@@ -26,13 +32,14 @@ if(filter_input(INPUT_POST, 'submit')){
 	while($stmt->fetch()) { }
 	
 	if (password_verify($pw, $pwhash)){
-		echo 'Logged in as '.$un;
+		echo 'Logged in as '.$un .  ' <a href="contentpage.php">Go to your page</a>';
 		$_SESSION['uid'] = $uid;
-		$_SESSION['username'] = $un;
+		$_SESSION['userName'] = $un;
+		
 		
 	}
 	else{
-		echo 'Illegal username/password combination';
+		echo 'Forkert Bruger navn eller password';
 	}
 
 	echo '<hr>';
@@ -46,7 +53,9 @@ if(filter_input(INPUT_POST, 'submit')){
 	<fieldset>
     	<legend>Login</legend>
     	<input name="un" type="text"     placeholder="Brugernavn" required />
+		<br>
     	<input name="pw" type="password" placeholder="Password"   required />
+		<br>
     	<input name="submit" type="submit" value="Login" />
 	</fieldset>
 </form>

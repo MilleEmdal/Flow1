@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<link rel="stylesheet" href="style.css">
+<title>Opret bruger</title>
 </head>
 
 <body>
@@ -21,7 +22,7 @@ if(filter_input(INPUT_POST, 'submit')){
 //	echo 'Opretter bruger<br>'.$un.' : '.$pw;
 	
 	require_once('dbcon.php');
-	$sql = 'INSERT INTO users (username, pwhash) VALUES (?, ?)';
+	$sql = 'INSERT INTO users (userName, password) VALUES (?, ?)';
 	$stmt = $link->prepare($sql);
 	$stmt->bind_param('ss', $un, $pw);
 	$stmt->execute();
@@ -41,7 +42,9 @@ if(filter_input(INPUT_POST, 'submit')){
 	<fieldset>
     	<legend>Tilføj ny bruger</legend>
     	<input name="un" type="text"     placeholder="Brugernavn" required />
+		<br>
     	<input name="pw" type="password" placeholder="Password"   required />
+		<br>
     	<input name="submit" type="submit" value="Tilføj bruger" />
 	</fieldset>
 </form>

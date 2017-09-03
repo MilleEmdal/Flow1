@@ -1,9 +1,9 @@
 <?php
 $DB_HOST = 'localhost';
 $DB_USER = 'root';
-$DB_PASS = '';
-$DB_NAME = '2016mula';
-// $DB_PORT = '8889';
+$DB_PASS = 'root';
+$DB_NAME = 'user';
+
 
 $link = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 //$link = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT);
